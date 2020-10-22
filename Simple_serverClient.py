@@ -15,7 +15,7 @@ while True:
         client.sendall(bin_msg)
         # waiting for answer
         data = client.recv(1024)
-        print(data.decode('utf-8'))
+        print('Server answer:', data.decode('utf-8'))
     except:
         print('not connected')
 

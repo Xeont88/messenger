@@ -54,6 +54,12 @@ while True:
 
     lst_data = str_data.split('|')
     command = lst_data[0]
-    print('command =', command)
+    # print('command =', command)
+    try:
+        param = lst_data[1]
+    except:
+        param = ''
+        print('command =', command + ', param =', param)
 
-    
+
+
