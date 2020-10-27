@@ -25,8 +25,11 @@ def send_answ(ip, msg):
     return res
 
 
+# TODO: сохранение сообщений в тхт док.
+
+
 myHost = ''
-myPort = 5400
+myPort = 5400       # servers port
 
 #  creating object of socket class
 sockObj = socket(AF_INET, SOCK_STREAM)
@@ -41,7 +44,6 @@ while True:
     print('connected by', address)
     bin_data = connection.recv(1024)
     str_data = bin_data.decode('utf-8')
-    print(str_data)
 
     # making answer
     str_answer = 'I\'ve got ' + str(len(bin_data)) + ' bytes'
@@ -59,7 +61,8 @@ while True:
         param = lst_data[1]
     except:
         param = ''
-        print('command =', command + ', param =', param)
+    print('command =', command + ', param =', param)
 
+    send_to_all(command + param)
 
 
